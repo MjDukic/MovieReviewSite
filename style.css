@@ -1,17 +1,20 @@
 body {
-    background-color: rgb(233, 222, 222);
+    background-color: #E8E8E8;
 }
 
 .header h1 {
     display: inline-block;
-    font-size: 48px;
+    font-size: 40px;
+    font-family: Optima, sans-serif;
+    margin-left: 15px;
+    margin-top: 10px;
 }
 
 .header nav {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Andale Mono, monospace;
     font-size: 20px;
 }
 
@@ -31,7 +34,7 @@ nav ul li {
     list-style-type: none;
 }
 
-p {
+/* p {
     color: black;
     font-weight: bold;
     font-size: 18px;
@@ -42,10 +45,9 @@ p {
 
 
 #input {
-    margin-left: 23px;
     border-radius: 5px;
     display: block;
     width: 210px;
     padding: 10px;
 
-}
+} */
