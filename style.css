@@ -34,6 +34,15 @@ nav ul li {
     list-style-type: none;
 }
 
+.carousel-inner {
+    background-color: black;
+}
+
+button {
+    background-color: darkgray;
+    border-radius: 10%;
+    
+}
 /* p {
     color: black;
     font-weight: bold;
