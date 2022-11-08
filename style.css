@@ -43,6 +43,17 @@ button {
     border-radius: 10%;
     
 }
+
+footer {
+    background-color: #375472;
+    color: white;
+    padding: 40px 0 20px;
+    
+}
+
+#credit {
+    text-align: center;
+}
 /* p {
     color: black;
     font-weight: bold;
