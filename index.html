@@ -25,14 +25,14 @@
                 </li>
                 <li>
                     <!--top movies watch/favs-->
-                    <a href="./reviewPage.html" id="reviewBtn" class="btn">Reviews</a>
+                    <a href="#movieReviews">Reviews</a>
                 </li>
             </ul>
         </nav>
     </section>
     
  <!-- carousel -->
-<div class="container-sm">
+<div class=".container-sm">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       
@@ -46,7 +46,7 @@
       <div class="carousel-inner">
   
         <div class="item active">
-          <img src="https://images.thedirect.com/media/photos/posd1_1.jpg" alt="Black Adams" class="center-block img-fluid" width="20%" height=150px;>
+          <img src="https://images.thedirect.com/media/photos/posd1_1.jpg" alt="Los Angeles" class="center-block img-fluid" width="20%" height=150px;>
           <div class="carousel-caption d-none d-md-block">
             <h3>Black Adams</h3>
             
@@ -55,7 +55,7 @@
         </div>
   
         <div class="item">
-          <img src="https://sm.ign.com/t/ign_za/gallery/s/spider-man/spider-man-far-from-home-official-movie-posters_ex7e.1080.jpg" alt="Spider-Man" class="center-block img-fluid" width="20%" height=150px;>
+          <img src="https://sm.ign.com/t/ign_za/gallery/s/spider-man/spider-man-far-from-home-official-movie-posters_ex7e.1080.jpg" alt="Chicago" class="center-block img-fluid" width="20%" height=150px;>
           <div class="carousel-caption d-none d-md-block">
             <h3>Spider-Man: Far from Home</h3>
             
@@ -64,7 +64,7 @@
         </div>
       
         <div class="item">
-          <img src="https://i0.wp.com/www.indesignskills.com/wp-content/uploads/2022/06/Elvis3.jpg?resize=850%2C1063&ssl=1" alt="Elvis" class="center-block img-fluid" width="20%" height=150px;>
+          <img src="https://i0.wp.com/www.indesignskills.com/wp-content/uploads/2022/06/Elvis3.jpg?resize=850%2C1063&ssl=1" alt="New York" class="center-block img-fluid" width="20%" height=150px;>
           <div class="carousel-caption d-none d-md-block">
             <h3>Elvis</h3>
             
@@ -97,19 +97,51 @@
 
 
 
-    <section class="reviews">
-        <div>
+    <section class="container">
+        <div class="movie-card">
             <div class="poster">
-                <img src="''" width="200px" height="200px" alt="">
+                <img src="https://images.thedirect.com/media/photos/posd1_1.jpg" width="200px" height="300px" alt="">
             </div>
             <div class="title">
-                <h2>Movie Title Here</h2>
+                <h2>Black Adams</h2>
             </div>
             <div class="review">
                 <textarea name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here..."></textarea>
-                <button>Save</button>
-                <button>Add to Reviews</button>
             </div>
+            <div class="review-buttons">
+                <button>Save</button>
+                <a href="./reviewPage.html" id="reviewBtn"class="btn">Add to Reviews</a>
+            </div>
+        </div>
+        <div class="movie-card">
+          <div class="poster">
+              <img src="https://sm.ign.com/t/ign_za/gallery/s/spider-man/spider-man-far-from-home-official-movie-posters_ex7e.1080.jpg" width="200px" height="300px" alt="">
+          </div>
+          <div class="title">
+              <h2>Spider-Man: Far From Home</h2>
+          </div>
+          <div class="review">
+              <textarea name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here..."></textarea>
+          </div>
+          <div class="review-buttons">
+              <button>Save</button>
+              <button>Add to Reviews</button>
+          </div>
+        </div>
+        <div class="movie-card">
+          <div class="poster">
+              <img src="https://i0.wp.com/www.indesignskills.com/wp-content/uploads/2022/06/Elvis3.jpg?resize=850%2C1063&ssl=1" width="200px" height="300px" alt="">
+          </div>
+          <div class="title">
+              <h2>Elvis</h2>
+          </div>
+          <div class="review">
+              <textarea name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here..."></textarea>
+          </div>
+          <div class="review-buttons">
+              <button>Save</button>
+              <button>Add to Reviews</button>
+          </div>
         </div>
     </section>
 
