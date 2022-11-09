@@ -75,13 +75,13 @@ footer {
 
 } */
 
-.container {
+#main {
     width: 750px;
     height: 2000px;
     margin: 20px auto;
 }
 
-.movie-card {
+.movie {
     border: 4px solid black;
     margin: 5px;
 }
