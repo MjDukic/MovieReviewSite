@@ -4,8 +4,8 @@ const api_url = base_url + '/trending/all/day?' + api_key;
 const img_url = 'https://image.tmdb.org/t/p/w500' 
 const search_url = base_url + '/search/movie?' + api_key;
 const main = document.getElementById("main");
-const form = document.getElementById("form");
-const search = document.getElementById("search");
+//const form = document.getElementById("form");
+const searchInput = document.getElementById("input")
 
 getMovies(api_url);
 
@@ -39,11 +39,13 @@ function displayMovies(data) {
     })
 } 
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault(); 
-    const searchTerm = search.ariaValueMax;
-    if(searchTerm) {
-
-        getMovies(search_url+'&query='+searchTerm+'&page=1&include_adult=false')
+searchInput.addEventListener("input", e => {
+    e.preventDefault();
+    const value = e.target.value 
+    if(value) {
+        getMovies(search_url+'&query='+value)
+    }
+    else{
+        getMovies(api_url);
     }
 })
