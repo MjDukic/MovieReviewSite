@@ -119,3 +119,15 @@ footer {
     height: 50px;
     color: white;
 }
+
+#homeBtn {
+    color: #337ab7;
+    font-family: Andale Mono, monospace;
+    text-decoration: none;
+}
+
+#reviewBtn {
+    color: #337ab7;
+    font-family: Andale Mono, monospace;
+    text-decoration: none;
+}

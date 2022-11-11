@@ -1,6 +1,4 @@
-/*MJS CODE WITH CHAD*/
-
-{/* <div class="movie-card">
+/* <div class="movie-card">
 <div class="poster">
     <img src="https://images.thedirect.com/media/photos/posd1_1.jpg" width="200px" height="300px" alt="">
 </div>
@@ -14,7 +12,8 @@
     <button class="saveBtn">Save TEST</button>
     <a href="./reviewPage.html" id="reviewBtn"class="btn">Go to Reviews</a>
 </div>
-</div> */}
+</div> */
+
 var movieData = [
     {
         title: "Black Adam",
@@ -36,7 +35,7 @@ var movieData = [
 
 //global var for referencing timeout function
 var debounce;
-var debounceTime = 600; //300 ms
+var debounceTime = 600;
 
 
 //additional things to add - Star ratings, timestamp, who wrote review, username etc. 
@@ -44,7 +43,6 @@ function handleSaveReview(){
         var textAreaEl = $(this).parent().siblings(".review").children("textarea");
         var title = $(this).attr("data-title")
         let descriptionValue = textAreaEl.val().trim();
-        //get source of image here
     
         var reviewTest = JSON.parse(localStorage.getItem('reviewHistory')) || []
         var reviewToStore = {
@@ -57,6 +55,7 @@ function handleSaveReview(){
         //if reviewTest is not nullish BUT ALSO not an array, .push() method would break, so guard clause for that (OPTIONAL)
         //unshift adds newest review to the beginning of array, so it shows on top when showing reviews
             reviewTest.unshift(reviewToStore)
+            console.log(descriptionValue, reviewTest, reviewToStore)
             localStorage.setItem('reviewHistory', JSON.stringify(reviewTest))
         // } else {
         //     reviewTest = [descriptionValue]
@@ -89,9 +88,8 @@ function createMovieCards(data){
     $(".saveBtn").click(handleSaveReview)
 }
 
-createMovieCards(movieData)
+// createMovieCards(movieData)
 
-/*END OF MJS CODE W CHAD*/
 
 
 
@@ -102,7 +100,6 @@ const api_url = base_url + '/trending/all/day?' + api_key;
 const img_url = 'https://image.tmdb.org/t/p/w500' 
 const search_url = base_url + '/search/movie?' + api_key;
 const main = document.getElementById("main");
-//const form = document.getElementById("form");
 const searchInput = document.getElementById("input")
 
 getMovies(api_url);
@@ -117,7 +114,7 @@ function getMovies(url) {
 function displayMovies(data) {
     main.innerHTML = '';
 
-    data.forEach(movie => {
+    data.forEach((movie, i) => {
         const {poster_path, title, vote_average, overview} = movie;
         const movieEL = document.createElement('div');
         movieEL.classList.add('movie');
@@ -131,9 +128,14 @@ function displayMovies(data) {
             <div class="review">
                 <textarea name="textbox" style="width: 400px" rows="5" placeholder="${overview}"></textarea>
             </div>
+            <div class="review-buttons">
+                <button id="saveBtn-${i}">Save</button>
+                <a href="./reviewPage.html" id="reviewBtn"class="btn">Go to Reviews</a>
+            </div>
         
         `
         main.appendChild(movieEL);
+        $(`#saveBtn-${i}`).click(handleSaveReview)
     })
 } 
 
