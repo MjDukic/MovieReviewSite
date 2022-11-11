@@ -34,6 +34,10 @@ var movieData = [
     },
 ]
 
+//global var for referencing timeout function
+var debounce;
+var debounceTime = 600; //300 ms
+
 
 //additional things to add - Star ratings, timestamp, who wrote review, username etc. 
 function handleSaveReview(){
@@ -134,13 +138,17 @@ function displayMovies(data) {
 } 
 
 searchInput.addEventListener("input", e => {
+    //add debouncer over here
+    clearTimeout(debounce);
     e.preventDefault();
     const value = e.target.value 
-    if(value) {
-        getMovies(search_url+'&query='+value)
-    }
-    else{
-        getMovies(api_url);
-    }
+    debounce = setTimeout(function(){
+        if(value) {
+            getMovies(search_url+'&query='+value)
+        }
+        else{
+            getMovies(api_url);
+        }
+    }, debounceTime)
 })
 
