@@ -75,6 +75,15 @@ footer {
 
 } */
 
+.top-5 h1 {
+    font-size: 48px;
+    font-family: Optima, sans-serif;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+
 #main {
     width: 750px;
     height: auto;
@@ -97,6 +106,7 @@ footer {
     width: 350px;
     margin: auto;
     display: block;
+    border: 5px solid gold;
 }
 
 .title {
