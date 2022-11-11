@@ -1,18 +1,3 @@
-/* <div class="movie-card">
-<div class="poster">
-    <img src="https://images.thedirect.com/media/photos/posd1_1.jpg" width="200px" height="300px" alt="">
-</div>
-<div class="title">
-    <h2>Black Adams</h2>
-</div>
-<div class="review">
-    <textarea id="textReviewID" class="textReview"name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here..."></textarea>
-</div>
-<div class="review-buttons">
-    <button class="saveBtn">Save TEST</button>
-    <a href="./reviewPage.html" id="reviewBtn"class="btn">Go to Reviews</a>
-</div>
-</div> */
 
 var movieData = [
     {
@@ -119,18 +104,21 @@ function displayMovies(data) {
         const movieEL = document.createElement('div');
         movieEL.classList.add('movie');
         movieEL.innerHTML = `
+        <div class="title">
+                <h2>${title}</h2>
+        </div>
         <div class="poster">
                 <img src="${img_url+poster_path}" width="200px" height="300px" alt="${title}">
-            </div>
-            <div class="title">
-                <h2>${title}</h2>
-            </div>
+        </div>
+        <div class="synopsis">
+            <p>${overview}</p>
+        </div>
             <div class="review">
-                <textarea name="textbox" style="width: 400px" rows="5" placeholder="${overview}"></textarea>
+                <textarea name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here ..."></textarea>
             </div>
             <div class="review-buttons">
                 <button id="saveBtn-${i}">Save</button>
-                <a href="./reviewPage.html" id="reviewBtn"class="btn">Go to Reviews</a>
+                <button onclick="window.location.href='./reviewPage.html';">Go to Reviews</a>
             </div>
         
         `
