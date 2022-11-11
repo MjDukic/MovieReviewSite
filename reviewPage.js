@@ -16,7 +16,7 @@ for (var i = 0; i < reviewSearchHistory.length; i++) {
     card.setAttribute("style", "width: 20rem;")
     var movieImage = document.createElement("img")
     movieImage.setAttribute("class", "card-img-top")
-    movieImage.setAttribute("src", "..")
+    movieImage.setAttribute("src", reviewSearchHistory[i].image)
     var cardBody = document.createElement("div")
     cardBody.setAttribute("class", "card-body")
     var reviewTitle = document.createElement('h2');

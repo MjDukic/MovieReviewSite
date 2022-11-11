@@ -33,6 +33,7 @@ function handleSaveReview(){
         var reviewToStore = {
             title: title,
             review: descriptionValue,
+            image:$(this).attr("data-image")
             //add key for movie image link 
             //add key for rating of movie
             // timeStamp: //use moment JS here
@@ -117,7 +118,7 @@ function displayMovies(data) {
                 <textarea name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here ..."></textarea>
             </div>
             <div class="review-buttons">
-                <button id="saveBtn-${i}">Save</button>
+                <button id="saveBtn-${i}" data-title = "${title}" data-image = "${img_url+poster_path}" >Save</button>
                 <button onclick="window.location.href='./reviewPage.html';">Go to Reviews</a>
             </div>
         
