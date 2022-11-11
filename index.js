@@ -40,11 +40,14 @@ function handleSaveReview(){
         var textAreaEl = $(this).parent().siblings(".review").children("textarea");
         var title = $(this).attr("data-title")
         let descriptionValue = textAreaEl.val().trim();
+        //get source of image here
     
         var reviewTest = JSON.parse(localStorage.getItem('reviewHistory')) || []
         var reviewToStore = {
             title: title,
             review: descriptionValue,
+            //add key for movie image link 
+            //add key for rating of movie
             // timeStamp: //use moment JS here
         }
         //if reviewTest is not nullish BUT ALSO not an array, .push() method would break, so guard clause for that (OPTIONAL)
@@ -72,7 +75,7 @@ function createMovieCards(data){
             <textarea id="textReviewID" class="textReview"name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here..."></textarea>
         </div>
         <div class="review-buttons">
-            <button data-title="${data[i].title}" class="saveBtn">Save TEST</button>
+            <button data-title="${data[i].title}" class="saveBtn">SAVE</button>
             <a href="./reviewPage.html" id="reviewBtn"class="btn">Go to Reviews</a>
         </div>
     </div>
