@@ -50,29 +50,29 @@ function handleSaveReview(){
 }
 
 //function to create the movie cards dynamically based on data provided, data will be an array of objects
-function createMovieCards(data){
-    for(var i = 0; i< data.length; i++){
-        $(".container").append(`
-        <div class="movie-card">
-        <div class="poster">
-            <img src="${data[i].posterURL}" width="200px" height="300px" alt="">
-        </div>
-        <div class="title">
-            <h2>${data[i].title}</h2>
-        </div>
-        <div class="review">
-            <textarea id="textReviewID" class="textReview"name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here..."></textarea>
-        </div>
-        <div class="review-buttons">
-            <button data-title="${data[i].title}" class="saveBtn">SAVE</button>
-            <a href="./reviewPage.html" id="reviewBtn"class="btn">Go to Reviews</a>
-        </div>
-    </div>
-        `)
-    };
+// function createMovieCards(data){
+//     for(var i = 0; i< data.length; i++){
+//         $(".container").append(`
+//         <div class="movie-card">
+//         <div class="poster">
+//             <img src="${data[i].posterURL}" width="200px" height="300px" alt="">
+//         </div>
+//         <div class="title">
+//             <h2>${data[i].title}</h2>
+//         </div>
+//         <div class="review">
+//             <textarea id="textReviewID" class="textReview"name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here..."></textarea>
+//         </div>
+//         <div class="review-buttons">
+//             <button data-title="${data[i].title}" class="saveBtn">SAVE</button>
+//             <a href="./reviewPage.html" id="reviewBtn"class="btn">Go to Reviews</a>
+//         </div>
+//     </div>
+//         `)
+//     };
 
-    $(".saveBtn").click(handleSaveReview)
-}
+//     $(".saveBtn").click(handleSaveReview)
+// }
 
 // createMovieCards(movieData)
 
@@ -122,7 +122,7 @@ function displayMovies(data) {
                 <textarea name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here ..."></textarea>
             </div>
             <div class="review-buttons">
-                <button id="saveBtn-${i}">Save</button>
+                <button id="saveBtn-${i}" data-image="${img_url+poster_path}" data-title="${title}">Save</button>
                 <button onclick="window.location.href='./reviewPage.html';">Go to Reviews</a>
             </div>
         
