@@ -87,6 +87,9 @@ const img_url = 'https://image.tmdb.org/t/p/w500'
 const search_url = base_url + '/search/movie?' + api_key;
 const main = document.getElementById("main");
 const searchInput = document.getElementById("input")
+const carousel_url = img_url + "/now_playing?" + api_key;
+const carousel_inner = $(".carousel-inner");
+
 
 getMovies(api_url);
 
@@ -101,6 +104,7 @@ function displayMovies(data) {
     main.innerHTML = '';
 
     data.forEach((movie, i) => {
+        console.log(i)
         const {poster_path, title, vote_average, overview} = movie;
         const movieEL = document.createElement('div');
         movieEL.classList.add('movie');
@@ -118,13 +122,48 @@ function displayMovies(data) {
                 <textarea name="textbox" style="width: 400px" rows="5" placeholder="Leave your review here ..."></textarea>
             </div>
             <div class="review-buttons">
-                <button id="saveBtn-${i}" data-title = "${title}" data-image = "${img_url+poster_path}" >Save</button>
+                <button id="saveBtn-${i}">Save</button>
                 <button onclick="window.location.href='./reviewPage.html';">Go to Reviews</a>
             </div>
         
         `
-        main.appendChild(movieEL);
-        $(`#saveBtn-${i}`).click(handleSaveReview)
+        console.log(carousel_inner)
+
+        var target_num = 0;
+        
+        var carousel_item = $("<div>").addClass("item")
+        //.attr("id", slide_key);
+        var poster_div = $("<div>").addClass("poster");
+        var poster_img = $("<img>").attr("src", img_url + poster_path)
+        //.attr("alt", "slide " + slide_key);
+        //myCarousel.append(carousel_item.append(poster_div.append(poster_img)));
+        carousel_inner.append(carousel_item.append(poster_div.append(poster_img)));
+    // console.log("data inside display function...", data);
+
+        var carousel_li = $("<li>").attr("data-target", "#myCarousel").attr("data-slide-to", i);
+        $(".carousel-indicators").append(carousel_li);
+            if(i == target_num){
+                carousel_item.addClass("active")
+                carousel_li.addClass("active")
+            } else {
+                carousel_item.removeClass("active")
+                carousel_li.removeClass("active") 
+            }
+    // myCarousel.innerHTML= `
+    //     <div class="carousel-item active">
+    //         <div class="poster">
+    //             <img style="width: auto;" src="${img_url+poster_path}" alt="${i}"/>
+    //         </div>
+
+    //         <div class="carousel-caption relative">
+    //             <h1>${title}</h1>
+    //         </div> 
+    //     </div>`
+    
+
+    main.appendChild(movieEL);
+    $(`#saveBtn-${i}`).click(handleSaveReview)
+    
     })
 } 
 
@@ -142,4 +181,3 @@ searchInput.addEventListener("input", e => {
         }
     }, debounceTime)
 })
-

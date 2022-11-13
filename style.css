@@ -35,7 +35,7 @@ nav ul li {
 }
 
 
-.carousel-inner {
+#carousel-inner {
     background-color: black;
     height: 100%;
 }
