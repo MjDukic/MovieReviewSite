@@ -92,11 +92,45 @@ const carousel_inner = $(".carousel-inner");
 
 
 getMovies(api_url);
+getCarousel(api_url);
 
 function getMovies(url) {
     fetch (url).then(res => res.json()).then(data => {
         console.log(data.results)
         displayMovies(data.results);
+    })
+}
+
+function getCarousel(url) {
+    fetch (url).then(res => res.json()).then(data => {
+        displayCarousel(data.results);
+    })
+}
+
+
+function displayCarousel (data) {
+    data.forEach((movie, i) => { 
+        
+        const {poster_path} = movie;
+        
+        var target_num = 0;
+        var carousel_item = $("<div>").addClass("item")
+        //.attr("id", slide_key);
+        var poster_div = $("<div>").addClass("poster");
+        var poster_img = $("<img>").attr("src", img_url + poster_path)
+        //.attr("alt", "slide " + slide_key);
+        //myCarousel.append(carousel_item.append(poster_div.append(poster_img)));
+        carousel_inner.append(carousel_item.append(poster_div.append(poster_img)));
+
+        var carousel_li = $("<li>").attr("data-target", "#myCarousel").attr("data-slide-to", i);
+        $(".carousel-indicators").append(carousel_li);
+            if(i == target_num){
+                carousel_item.addClass("active")
+                carousel_li.addClass("active")
+            } else {
+                carousel_item.removeClass("active")
+                carousel_li.removeClass("active") 
+            }
     })
 }
 
@@ -127,39 +161,6 @@ function displayMovies(data) {
             </div>
         
         `
-        console.log(carousel_inner)
-
-        var target_num = 0;
-        
-        var carousel_item = $("<div>").addClass("item")
-        //.attr("id", slide_key);
-        var poster_div = $("<div>").addClass("poster");
-        var poster_img = $("<img>").attr("src", img_url + poster_path)
-        //.attr("alt", "slide " + slide_key);
-        //myCarousel.append(carousel_item.append(poster_div.append(poster_img)));
-        carousel_inner.append(carousel_item.append(poster_div.append(poster_img)));
-    // console.log("data inside display function...", data);
-
-        var carousel_li = $("<li>").attr("data-target", "#myCarousel").attr("data-slide-to", i);
-        $(".carousel-indicators").append(carousel_li);
-            if(i == target_num){
-                carousel_item.addClass("active")
-                carousel_li.addClass("active")
-            } else {
-                carousel_item.removeClass("active")
-                carousel_li.removeClass("active") 
-            }
-    // myCarousel.innerHTML= `
-    //     <div class="carousel-item active">
-    //         <div class="poster">
-    //             <img style="width: auto;" src="${img_url+poster_path}" alt="${i}"/>
-    //         </div>
-
-    //         <div class="carousel-caption relative">
-    //             <h1>${title}</h1>
-    //         </div> 
-    //     </div>`
-    
 
     main.appendChild(movieEL);
     $(`#saveBtn-${i}`).click(handleSaveReview)
@@ -178,6 +179,7 @@ searchInput.addEventListener("input", e => {
         }
         else{
             getMovies(api_url);
+
         }
     }, debounceTime)
 })
