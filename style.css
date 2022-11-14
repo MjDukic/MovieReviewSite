@@ -42,10 +42,13 @@ nav ul li {
 
 
 button {
-    background-color: darkgray;
-    border-radius: 10%; 
+    background-color: lightblue;
+    border-radius: 20%; 
 }
 
+button:hover {
+    background: #ccc;
+}
 footer {
     background-color: #375472;
     color: white;
