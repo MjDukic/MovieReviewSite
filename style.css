@@ -11,6 +11,14 @@
     --fifth: firebrick;
 }
 
+.page {
+    background-color: var(--primary);
+}
+
+.body {
+    background-color: var(--primary);
+}
+
 .header {
     background-color: var(--primary);
 }
@@ -81,6 +89,7 @@ button:hover {
     width: 750px;
     height: auto;
     margin: 20px auto;
+    background-color: var(--primary);
 }
 
 
@@ -175,10 +184,10 @@ button:hover {
 
 
 
-footer {
-    background-color: #375472;
-    color: white;
-    padding: 40px 0 20px;
+.footer {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 20px 20px;
     
 }
 
