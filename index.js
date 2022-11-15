@@ -3,7 +3,7 @@ var debounce;
 var debounceTime = 600;
 
 
-//additional things to add - Star ratings, timestamp, who wrote review, username etc. 
+//when "saved" button is clicked, saved the reviews with additional info (reviewToStore) get saved to reviews page
 function handleSaveReview(){
         var textAreaEl = $(this).parent().siblings(".review").children("textarea");
         var title = $(this).attr("data-title")
