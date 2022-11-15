@@ -1,11 +1,6 @@
 //from index.js.. within the handleSaveReview function
 var reviewSearchHistory = JSON.parse(localStorage.getItem('reviewHistory')) || []
-// if(reviewSearchHistory) {
     console.log(reviewSearchHistory)
-    // reviewSearchHistory = JSON.parse(reviewSearchHistory)
-// } else {
-//     reviewSearchHistory = []
-// }
 
 //getting the saved review, with the specific image and organizing into columns and rows using bootstrap
 for (var i = 0; i < reviewSearchHistory.length; i++) {
@@ -13,7 +8,7 @@ for (var i = 0; i < reviewSearchHistory.length; i++) {
     reviewWrapper.setAttribute("class", "col")
     var card = document.createElement('div')
     card.setAttribute("class", "card")
-    card.setAttribute("style", "width: 20rem;")
+    card.setAttribute("style", "width: 15rem;")
     var movieImage = document.createElement("img")
     movieImage.setAttribute("class", "card-img-top")
     movieImage.setAttribute("src", reviewSearchHistory[i].image)
