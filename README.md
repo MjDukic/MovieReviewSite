@@ -16,6 +16,10 @@ JavaScript
 
 
 ## Visuals
+![Screen Shot 2022-11-14 at 7 49 14 PM](https://user-images.githubusercontent.com/113808775/201822080-45293af0-1508-4ccd-8fb5-514665b1fcea.png)
+![Screen Shot 2022-11-14 at 7 49 27 PM](https://user-images.githubusercontent.com/113808775/201822076-062c918c-afcd-428d-a08c-89974a7e7363.png)
+![Screen Shot 2022-11-14 at 7 50 06 PM](https://user-images.githubusercontent.com/113808775/201822071-9f144b45-5b03-4caf-a6dc-4a2017b23a27.png)
+
 
 
 ## Usage
