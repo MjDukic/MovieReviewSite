@@ -1,11 +1,6 @@
 //from index.js.. within the handleSaveReview function
 var reviewSearchHistory = JSON.parse(localStorage.getItem('reviewHistory')) || []
-// if(reviewSearchHistory) {
     console.log(reviewSearchHistory)
-    // reviewSearchHistory = JSON.parse(reviewSearchHistory)
-// } else {
-//     reviewSearchHistory = []
-// }
 
 //getting the saved review, with the specific image and organizing into columns and rows using bootstrap
 for (var i = 0; i < reviewSearchHistory.length; i++) {

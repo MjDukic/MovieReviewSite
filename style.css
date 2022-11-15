@@ -64,24 +64,6 @@ button:hover {
     color: var(--primary);
 }
 
-/* p {
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 20px;
-    margin-bottom: 0;
-}
-
-
-#input {
-    border-radius: 5px;
-    display: block;
-    width: 210px;
-    padding: 10px;
-
-} */
-
 .body {
     background-color: var(--primary);
 }
@@ -94,7 +76,6 @@ button:hover {
     font-weight: bold;
     color: var(--secondary);
 }
-
 
 #main {
     width: 750px;
