@@ -1,4 +1,4 @@
-//from index.js.. within the handleSaveReview function
+//from index.js.. within the handleSaveReview function..
 var reviewSearchHistory = JSON.parse(localStorage.getItem('reviewHistory')) || []
     console.log(reviewSearchHistory)
 
