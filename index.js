@@ -81,7 +81,8 @@ function displayMovies(data) {
 
     data.forEach((movie, i) => {
         console.log(i)
-        const {poster_path, title, vote_average, overview} = movie;
+        
+        const {poster_path, title, overview} = movie;
         const movieEL = document.createElement('div');
         movieEL.classList.add('movie');
         movieEL.innerHTML = `
@@ -103,10 +104,9 @@ function displayMovies(data) {
             </div>
         
         `
-
+        
     main.appendChild(movieEL);
     $(`#saveBtn-${i}`).click(handleSaveReview)
-    
     })
 } 
 
